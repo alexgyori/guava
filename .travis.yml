@@ -26,11 +26,11 @@ cache:
 
 matrix:
     - env:
-        CMD='echo stuff'
+        - CMD='echo stuff'
     - env:
-        CMD='./runClient.sh git@github.com:alibaba/canal.git com.google.guava'
+        - CMD='./runClient.sh git@github.com:alibaba/canal.git com.google.guava'
     - env:
-        CMD="travis_wait 360 mvn -B verify -U -Dmaven.javadoc.skip=true -Dgwt.test.include=**/DoesNotMatchAnyTests.java"
+        - CMD="travis_wait 360 mvn -B verify -U -Dmaven.javadoc.skip=true -Dgwt.test.include=**/DoesNotMatchAnyTests.java"
 
 
 env:
