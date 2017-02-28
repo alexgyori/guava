@@ -14,7 +14,7 @@ addons:
 install: mvn -B install -U -DskipTests=true
 
 # https://docs.travis-ci.com/user/common-build-problems/#Build-times-out-because-no-output-was-received
-script: travis_wait 360 mvn -B verify -U -Dmaven.javadoc.skip=true -Dgwt.test.include=**/DoesNotMatchAnyTests.java
+script: eval $CMD
 
 after_success:
   - util/deploy_snapshot.sh
@@ -23,6 +23,15 @@ after_success:
 cache:
   directories:
   - $HOME/.m2
+
+matrix:
+    - env:
+        CMD='echo stuff'
+    - env:
+        CMD='./runClient.sh git@github.com:alibaba/canal.git com.google.guava'
+    - env:
+        CMD="travis_wait 360 mvn -B verify -U -Dmaven.javadoc.skip=true -Dgwt.test.include=**/DoesNotMatchAnyTests.java"
+
 
 env:
   global:
