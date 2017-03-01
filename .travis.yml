@@ -2,8 +2,6 @@ sudo: false
 
 language: java
 
-jdk:
-  - oraclejdk8
 
 # https://github.com/travis-ci/travis-ci/issues/3259#issuecomment-130860338
 addons:
@@ -23,11 +21,14 @@ cache:
 
 matrix:
  include:
-  - env:
+  - jdk:  oraclejdk8
+    env:
     - RUN='echo stuff'
-  - env:
+  - jdk:  oraclejdk8
+    env:
     - RUN='./runClient.sh git@github.com:alibaba/canal.git com.google.guava'
-  - env:
+  - jdk:  oraclejdk8
+    env:
     - RUN="travis_wait 360 mvn -B verify -U -Dmaven.javadoc.skip=true -Dgwt.test.include=**/DoesNotMatchAnyTests.java"
 
 
