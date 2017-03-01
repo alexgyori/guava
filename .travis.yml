@@ -25,7 +25,7 @@ matrix:
     env:
     - RUN='testing this matrix works'
     env:
-    - RUN='./fix/runClient.sh git@github.com:cucumber/cucumber-jvm.git com.google.guava'
+    - RUN='.fix/runClient.sh git@github.com:cucumber/cucumber-jvm.git com.google.guava'
   - jdk:  oraclejdk8
     env:
     - RUN='.fix/runClient.sh git@github.com:alibaba/canal.git com.google.guava'
