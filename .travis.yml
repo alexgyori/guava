@@ -25,7 +25,7 @@ cache:
   - $HOME/.m2
 
 matrix:
- include
+ include:
   - env:
     - CMD='echo stuff'
   - env:
