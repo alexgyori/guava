@@ -21,16 +21,18 @@ cache:
   directories:
   - $HOME/.m2
 
-env:
-    - CMD='echo stuff'
-env:
-    - CMD='./runClient.sh git@github.com:alibaba/canal.git com.google.guava'
-env:
-    - CMD="travis_wait 360 mvn -B verify -U -Dmaven.javadoc.skip=true -Dgwt.test.include=**/DoesNotMatchAnyTests.java"
+matrix:
+ include:
+  - env:
+    - RUN='echo stuff'
+  - env:
+    - RUN='./runClient.sh git@github.com:alibaba/canal.git com.google.guava'
+  - env:
+    - RUN="travis_wait 360 mvn -B verify -U -Dmaven.javadoc.skip=true -Dgwt.test.include=**/DoesNotMatchAnyTests.java"
 
 
 # https://docs.travis-ci.com/user/common-build-problems/#Build-times-out-because-no-output-was-received
-script: eval "$CMD"
+script: eval ${RUN}
 
 
 branches:
