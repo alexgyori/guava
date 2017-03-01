@@ -37,6 +37,10 @@ matrix:
   - jdk:  oraclejdk8
     env:
     - RUN='.fix/runClient.sh https://github.com/alibaba/canal.git com.google.guava'
+  - jdk: oraclejdk8
+    env:
+    - RUN='.fix/runClient.sh https://github.com/apache/flink.git com.google.guava'
+
 
 
 # https://docs.travis-ci.com/user/common-build-problems/#Build-times-out-because-no-output-was-received
