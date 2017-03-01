@@ -39,7 +39,7 @@ matrix:
     - RUN='.fix/runClient.sh https://github.com/alibaba/canal.git com.google.guava'
   - jdk: oraclejdk8
     env:
-    - RUN='.fix/runClient.sh https://github.com/apache/flink.git com.google.guava'
+    - RUN='.fix/runClient.sh https://github.com/dropwizard/dropwizard.git com.google.guava'
 
 
 
