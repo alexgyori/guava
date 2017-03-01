@@ -21,13 +21,11 @@ cache:
   directories:
   - $HOME/.m2
 
-matrix:
- include:
-  - env:
+env:
     - CMD='echo stuff'
-  - env:
+env:
     - CMD='./runClient.sh git@github.com:alibaba/canal.git com.google.guava'
-  - env:
+env:
     - CMD="travis_wait 360 mvn -B verify -U -Dmaven.javadoc.skip=true -Dgwt.test.include=**/DoesNotMatchAnyTests.java"
 
 
