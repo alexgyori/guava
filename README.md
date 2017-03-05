@@ -1,4 +1,3 @@
-Changing to trigger Travis.
 # Guava: Google Core Libraries for Java
 
 [![Build Status](https://travis-ci.org/google/guava.svg?branch=master)](https://travis-ci.org/google/guava)
